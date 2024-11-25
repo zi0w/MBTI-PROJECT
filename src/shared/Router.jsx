@@ -5,10 +5,12 @@ import Profile from "../pages/Profile";
 import Signup from "../pages/SignUp";
 import Test from "../pages/Test";
 import TestResults from "../pages/TestResults";
+import Header from "../components/common/Header";
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
