@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { updateProfile } from "../api/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUserInfo } from "../redux/slices/authSlice";
@@ -41,7 +41,7 @@ const Profile = () => {
     <div>
       <div>
         <h1>프로필 수정</h1>
-        <h2>{user}님 환영합니다!</h2>
+        <h2>{user.nickname}님 환영합니다!</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label>닉네임</label>
