@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-// 회원가입인지 로그인인지 구분하기 위해 mode 를 props 로 받습니다.
-// onSubmit 도 회원가입과 로그인 페이지에서 각각 구현을 하고 props 로 넘겨줄 겁니다.
+// mode로 회원가입, 로그인 구분 -> 조건부 렌더링
+// onSubmit 통해 회원가입, 로그인에 formData 넘겨주기
 const AuthForm = ({ mode, onSubmit }) => {
   const [formData, setFormData] = useState({
     id: "",
