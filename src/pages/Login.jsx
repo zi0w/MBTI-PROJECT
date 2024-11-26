@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import AuthForm from "../components/auth/AuthForm";
 import { login, getUserProfile } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { changeLogin } from "../redux/slices/authSlice";
+import { changeLogin, updateUserInfo } from "../redux/slices/authSlice";
 
-const Login = ({ setUser }) => {
+const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -15,7 +14,14 @@ const Login = ({ setUser }) => {
       if (response.success) {
         alert("로그인 성공!");
         localStorage.setItem("accessToken", response.accessToken);
+        // 로그인 상태 변경
         dispatch(changeLogin());
+
+        // 유저 정보 가져오기
+        const userProfile = await getUserProfile(response.accessToken);
+        localStorage.setItem("userNickname", response.nickname);
+        dispatch(updateUserInfo(userProfile));
+        console.log(userProfile);
         navigate("/");
       }
     } catch (error) {

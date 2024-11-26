@@ -7,6 +7,7 @@ import Test from "../pages/Test";
 import TestResults from "../pages/TestResults";
 import Header from "../components/common/Header";
 
+// 라우터 단에서 리다이렉팅
 const Router = () => {
   return (
     <BrowserRouter>
