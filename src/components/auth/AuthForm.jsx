@@ -23,35 +23,51 @@ const AuthForm = ({ mode, onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="id"
-        value={formData.id}
-        onChange={handleChange}
-        placeholder="아이디"
-        required
-      />
-      <input
-        type="text"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-        placeholder="비밀번호"
-        required
-      />
-      {mode === "signup" && (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5 items-center">
+      <div className="flex gap-5 items-center mt-3">
+        <label className="w-24 text-right">ID:</label>
         <input
           type="text"
-          name="nickname"
-          value={formData.nickname}
+          name="id"
+          value={formData.id}
           onChange={handleChange}
-          placeholder="닉네임"
+          placeholder="아이디를 입력해주세요."
           required
-          className="w-full p-4 border border-gray-300 rounded-lg"
+          className="border border-black placeholder:text-xs px-2"
         />
+      </div>
+      <div className="flex gap-5">
+        <label className="w-24 text-right">Password:</label>
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          placeholder="비밀번호를 입력해주세요."
+          required
+          className="border border-black placeholder:text-xs px-2"
+        />
+      </div>
+      {mode === "signup" && (
+        <div className="flex gap-5">
+          <label className="w-24 text-right">Nickname:</label>
+          <input
+            type="text"
+            name="nickname"
+            value={formData.nickname}
+            onChange={handleChange}
+            placeholder="닉네임을 입력해주세요."
+            required
+            className="border border-black placeholder:text-xs px-2"
+          />
+        </div>
       )}
-      <button type="submit">{mode === "login" ? "로그인" : "회원가입"}</button>
+      <button
+        type="submit"
+        className="border border-black w-28 py-0.5 rounded-full mt-2 bg-black text-white font-semibold transform hover:scale-105 hover:shadow-lg hover:bg-black-900 transition-all duration-300 ease-in-out"
+      >
+        {mode === "login" ? "로그인" : "회원가입"}
+      </button>
     </form>
   );
 };

@@ -15,12 +15,12 @@ const TestPage = () => {
   };
 
   const handleNavigateToResults = () => {
-    navigate("/results");
+    navigate("/testResult");
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-white">
-      <div className="bg-white rounded-lg p-8 max-w-lg w-full h-full overflow-y-auto">
+    <div className="w-full flex flex-col items-center justify-center bg-[#A5FF5E] ">
+      <div className="bg-white border border-black p-8 mt-10 max-w-lg w-full h-full overflow-y-auto mb-10 flex flex-col items-center">
         {!result ? (
           <>
             <h1 className="text-3xl font-bold text-primary-color mb-6">
@@ -39,7 +39,7 @@ const TestPage = () => {
             </p>
             <button
               onClick={handleNavigateToResults}
-              className="w-full bg-primary-color text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
+              className="border border-black rounded-full px-7 py-2 bg-black text-white font-semibold transform hover:scale-105 hover:shadow-lg hover:bg-black-900 transition-all duration-300 ease-in-out"
             >
               결과 페이지로 이동하기
             </button>

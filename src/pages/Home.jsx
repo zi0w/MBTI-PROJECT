@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const navigate = useNavigate();
   const isLogin = useSelector((state) => state.auth.isLogin);
 
   const handleLoginRedirect = () => {
-    alert("로그인이 필요한 서비스입니다. 로그인 페이지로 이동합니다.");
+    toast.error("로그인이 필요한 서비스입니다.");
     navigate("/login");
   };
 

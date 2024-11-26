@@ -3,6 +3,7 @@ import { login, getUserProfile } from "../api/auth";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { changeLogin, updateUserInfo } from "../redux/slices/authSlice";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Login = () => {
     try {
       const response = await login(formData);
       if (response.success) {
-        alert("로그인 성공!");
+        toast.success("로그인 성공!");
         localStorage.setItem("accessToken", response.accessToken);
         // 로그인 상태 변경
         dispatch(changeLogin());
@@ -23,17 +24,17 @@ const Login = () => {
         console.log(userProfile);
       }
     } catch (error) {
-      alert("로그인에 실패했습니다. 다시 시도해주세요.");
+      toast.error("로그인에 실패했습니다. 다시 시도해주세요.");
       console.error(error);
     }
   };
 
   return (
-    <div>
-      <div>
-        <h1>로그인</h1>
+    <div className="bg-[#A5FF5E] h-lvh overflow-hidden flex justify-center">
+      <div className="border border-black bg-white mt-20 w-1/3 h-72 py-4 flex flex-col items-center">
+        <h1 className="text-2xl font-semibold mb-5">로그인</h1>
         <AuthForm mode="login" onSubmit={handleLogin} />
-        <div>
+        <div className="mt-10 text-sm underline underline-offset-3">
           <p>
             계정이 없으신가요? <Link to="/signup">회원가입</Link>
           </p>
