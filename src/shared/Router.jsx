@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 
 const PublicRoute = ({ element }) => {
   const isLogin = useSelector((state) => state.auth.isLogin);
-
   return isLogin ? <Navigate to="/" /> : element;
 };
 
