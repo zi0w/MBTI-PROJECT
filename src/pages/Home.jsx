@@ -12,7 +12,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#A5FF5E] h-screen">
+    <div className="flex flex-col items-center bg-[#A5FF5E]">
       <h1 className="text-7xl mt-20 font-bold">MBTI LAB</h1>
       <h2 className="text-3xl mt-7 font-semibold">무료 성격 테스트</h2>
       <p className="text-xl mt-3 font-light">

@@ -19,9 +19,8 @@ const Login = () => {
 
         // 유저 정보 가져오기
         const userProfile = await getUserProfile(response.accessToken);
-        localStorage.setItem("userNickname", response.nickname);
-        dispatch(updateUserInfo(userProfile));
-        console.log(userProfile);
+        localStorage.setItem("userNickname", userProfile.nickname);
+        dispatch(updateUserInfo(userProfile.nickname));
       }
     } catch (error) {
       toast.error("로그인에 실패했습니다. 다시 시도해주세요.");

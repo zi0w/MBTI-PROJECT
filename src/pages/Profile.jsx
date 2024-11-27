@@ -6,8 +6,9 @@ import { toast } from "react-toastify";
 
 const Profile = () => {
   const [inputValue, setInputValue] = useState("");
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state.auth.userNickname);
   const dispatch = useDispatch();
+  console.log(user);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isLogin: !!localStorage.getItem("accessToken"),
-  user: localStorage.getItem("userNickname") ?? [],
+  userNickname: localStorage.getItem("userNickname") ?? "",
 };
 
 const authSlice = createSlice({
@@ -18,7 +18,7 @@ const authSlice = createSlice({
     },
     updateUserInfo: (state, action) => {
       const newUserInfo = action.payload;
-      state.user = newUserInfo;
+      state.userNickname = newUserInfo;
     },
   },
 });
