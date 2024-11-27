@@ -5,5 +5,5 @@ export const authApi = axios.create({
 });
 
 export const jsonApi = axios.create({
-  baseURL: "https://pleasant-zest-tabletop.glitch.me",
+  baseURL: "https://assorted-tall-individual.glitch.me",
 });
