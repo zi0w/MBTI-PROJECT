@@ -1,14 +1,30 @@
-import axios from "axios";
-
-const API_URL = "http://localhost:5000/testResults";
+import { jsonApi } from "./axios";
 
 export const getTestResults = async () => {
-  const response = await axios.get(API_URL);
-  return response.data;
+  try {
+    const { data } = await jsonApi.get("/");
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-export const createTestResult = async (resultData) => {};
+export const createTestResult = async (resultData) => {
+  // 닉네임, 타임스탬프, 엠비티아이, 해석
+  try {
+    const { data } = await jsonApi.post("/", resultData);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-export const deleteTestResult = async (id) => {};
+export const deleteTestResult = async (id) => {
+  // const response = await jsonApi.
+  // return response.data
+};
 
-export const updateTestResultVisibility = async (id, visibility) => {};
+export const updateTestResultVisibility = async (id, visibility) => {
+  // const response = await jsonApi.
+  // return response.data
+};

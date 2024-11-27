@@ -3,15 +3,29 @@ import TestForm from "../components/TestForm";
 import { calculateMBTI, mbtiDescriptions } from "../utils/mbtiCalculator";
 import { createTestResult } from "../api/testResult";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const TestPage = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
+  const user = useSelector((state) => state.auth.userNickname);
 
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers);
     setResult(mbtiResult);
-    /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
+
+    // db.josn에 필요한 결과 값 보내기
+    const resultData = {
+      nickname: user,
+      timestamp: new Date().toISOString(),
+      mbti: mbtiResult,
+      mbtiDescriptions: mbtiDescriptions[mbtiResult],
+    };
+    try {
+      await createTestResult(resultData);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleNavigateToResults = () => {
