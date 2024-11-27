@@ -39,7 +39,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-[#A5FF5E] h-lvh flex justify-center">
+    <div className="bg-[#A5FF5E] flex justify-center">
       <div className="border border-black bg-white w-1/3 mt-20 h-56 flex flex-col items-center py-4">
         <h1 className="text-2xl font-semibold">프로필 수정</h1>
         <h2 className="mt-2">{user}님 환영합니다!</h2>

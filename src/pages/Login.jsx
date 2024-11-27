@@ -35,8 +35,8 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#A5FF5E] h-lvh overflow-hidden flex justify-center">
-      <div className="border border-black bg-white mt-20 w-1/3 h-72 py-4 flex flex-col items-center">
+    <div className="bg-[#A5FF5E] overflow-hidden flex justify-center">
+      <div className="border border-black bg-white mt-20 w-1/3 h-2/4 py-4 flex flex-col items-center">
         <h1 className="text-2xl font-semibold mb-5">로그인</h1>
         <AuthForm mode="login" onSubmit={handleLogin} />
         <div className="mt-10 text-sm underline underline-offset-3">
