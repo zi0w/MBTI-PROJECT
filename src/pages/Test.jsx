@@ -9,6 +9,7 @@ const TestPage = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
   const user = useSelector((state) => state.auth.userNickname);
+  const userId = useSelector((state) => state.auth.userId);
 
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers);
@@ -20,6 +21,8 @@ const TestPage = () => {
       timestamp: new Date().toISOString(),
       mbti: mbtiResult,
       mbtiDescriptions: mbtiDescriptions[mbtiResult],
+      userId,
+      visibility: true,
     };
     try {
       await createTestResult(resultData);

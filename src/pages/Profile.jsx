@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { updateProfile } from "../api/auth";
 import { useDispatch, useSelector } from "react-redux";
-import { updateUserInfo } from "../redux/slices/authSlice";
+import { updateUserNickname } from "../redux/slices/authSlice";
 import { toast } from "react-toastify";
 
 const Profile = () => {
@@ -25,7 +25,7 @@ const Profile = () => {
 
       // 업데이트 성공시 로컬스토리지에도 닉네임 저장
       if (response.success) {
-        dispatch(updateUserInfo(response.nickname));
+        dispatch(updateUserNickname(response.nickname));
         toast.success("프로필이 성공적으로 업데이트 되었습니다!");
         localStorage.setItem("userNickname", response.nickname);
         setInputValue("");

@@ -2,7 +2,11 @@ import AuthForm from "../components/auth/AuthForm";
 import { login, getUserProfile } from "../api/auth";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { changeLogin, updateUserInfo } from "../redux/slices/authSlice";
+import {
+  changeLogin,
+  updateUserId,
+  updateUserNickname,
+} from "../redux/slices/authSlice";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -20,7 +24,9 @@ const Login = () => {
         // 유저 정보 가져오기
         const userProfile = await getUserProfile(response.accessToken);
         localStorage.setItem("userNickname", userProfile.nickname);
-        dispatch(updateUserInfo(userProfile.nickname));
+        localStorage.setItem("userId", userProfile.id);
+        dispatch(updateUserNickname(userProfile.nickname));
+        dispatch(updateUserId(userProfile.id));
       }
     } catch (error) {
       toast.error("로그인에 실패했습니다. 다시 시도해주세요.");

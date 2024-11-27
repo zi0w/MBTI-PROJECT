@@ -20,11 +20,13 @@ export const createTestResult = async (resultData) => {
 };
 
 export const deleteTestResult = async (id) => {
-  // const response = await jsonApi.
-  // return response.data
+  const response = await jsonApi.delete(`/${id}`);
+  return response.data;
 };
 
-export const updateTestResultVisibility = async (id, visibility) => {
-  // const response = await jsonApi.
-  // return response.data
+export const updateTestResultVisibility = async ({ id, visibility }) => {
+  const response = await jsonApi.patch(`/${id}`, {
+    visibility,
+  });
+  return response.data;
 };
