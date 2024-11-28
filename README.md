@@ -1,4 +1,4 @@
-# 💡welcom to MBTI Lab💡
+# 💡welcom to MBTI LAB💡
 
 ### MBTI 성격 유형 테스트 서비스 프로젝트
 배포 링크: [https://mbti-project-eight.vercel.app/](https://mbti-project-eight.vercel.app/)
