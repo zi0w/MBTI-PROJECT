@@ -13,9 +13,9 @@
 - `auth.js`에서 JWT 인증 서버와 통신하여 회원가입, 로그인, 프로펄 정보 획득 및 수정
 - LocalStorage에 JWT 토큰을 저장하여, 새로고침 후에도 로그인이 유지될 수 있도록 구현
 
-### 2️⃣ json-server, Tanstact Query를 활용한 테스트 결과 상태 관리
+### 2️⃣ json-server, Tanstack Query를 활용한 테스트 결과 상태 관리
 - `testReuslt.js`에서 json-server와 통신하여 테스트 결과 획득, 생성, 삭제, 공개/비공개 여부 변경
-- `TestResults.jsx`, `TestResultItem.jsx`에서 Tanstact Query를 사용하여 테스트 결과 상태 관리
+- `TestResults.jsx`, `TestResultItem.jsx`에서 Tanstack Query를 사용하여 테스트 결과 상태 관리
 
 ### 3️⃣ RRD(React Rounter DOM)을 활용한 페이지 라우팅
 - 페이지 라우팅 구현
