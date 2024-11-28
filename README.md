@@ -27,6 +27,9 @@
 ### 5️⃣ accessToken 만료 시 로그아웃 처리
 - 토큰이 만료된 상태에서 JWT 인증 서버와 통신 시도 시(프로필 변경, 테스트 결과 제출, 조회 등) 로그아웃 처리
 
+### 6️⃣ MBTI 테스트
+- `Text.jsx`에서 `mbtiCalculator.js`를 활용해 `TestForm.jsx`의 결과에 따른 유저의 MBTI 유형 도출
+
 
 <br />
 
@@ -40,10 +43,10 @@
 <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat&logo=Javascript&logoColor=white" />
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
 <img src="https://img.shields.io/badge/Tailwindcss-06B6D4?style=flat&logo=Tailwindcss&logoColor=white" />
+<img src="https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=Axios&logoColor=white" />
 <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
+<img src="https://img.shields.io/badge/Glitch-3333FF?style=flat-square&logo=Glitch&logoColor=white"/>
 <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>
 <img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=github&logoColor=white"/>
-<img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white"/>
-<img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=Slack&logoColor=white"/>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/>
 </div>
